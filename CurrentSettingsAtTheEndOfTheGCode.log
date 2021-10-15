@@ -1,0 +1,528 @@
+
+;Instructions
+
+;Copy the text below and paste it at the end of your EndG-code in the Machine Settings window of your printer
+;After that all your GCode files will have at the end a complete list of your current settings for each print
+;Very useful if you want to compare settings with someone else
+
+;Notice there is a slight hierarchical tab to see the 'children' parameters (depending from a 'parent' one)
+
+;Copy from the line below !!!
+
+;****Current settings used*****
+
+;Machine 
+; Machine Type: {machine_name}
+; Show Machine Variants: {machine_show_variants}
+; Material GUID: {material_guid}
+; Wait for Build Plate Heatup: {material_bed_temp_wait}
+; Wait for Nozzle Heatup: {material_print_temp_wait}
+; Include Material Temperatures: {material_print_temp_prepend}
+; Include Build Plate Temperature: {material_bed_temp_prepend}
+; Machine Width: {machine_width}
+; Machine Depth: {machine_depth}
+; Build Plate Shape: {machine_shape}
+; Build Plate Material: {machine_buildplate_type}
+; Machine Height: {machine_height}
+; Has Heated Build Plate: {machine_heated_bed}
+; Is Center Origin: {machine_center_is_zero}
+; Number of Extruders: {machine_extruder_count}
+; Number of Extruders that are enabled: {extruders_enabled_count}
+; Outer nozzle diameter: {machine_nozzle_tip_outer_diameter}
+; Nozzle length: {machine_nozzle_head_distance}
+; Nozzle angle: {machine_nozzle_expansion_angle}
+; Heat zone length: {machine_heat_zone_length}
+; Filament Park Distance: {machine_filament_park_distance}
+; Enable Nozzle Temperature Control: {machine_nozzle_temp_enabled}
+; Heat up speed: {machine_nozzle_heat_up_speed}
+; Cool down speed: {machine_nozzle_cool_down_speed}
+; Minimal Time Standby Temperature: {machine_min_cool_heat_time_window}
+; G-code flavour: {machine_gcode_flavor}
+; Firmware Retraction: {machine_firmware_retract}
+; Disallowed areas: {machine_disallowed_areas}
+; Nozzle Disallowed Areas: {nozzle_disallowed_areas}
+; Machine head polygon: {machine_head_polygon}
+; Machine head & Fan polygon: {machine_head_with_fans_polygon}
+; Gantry height: {gantry_height}
+; Nozzle ID: {machine_nozzle_id}
+; Nozzle Diameter: {machine_nozzle_size}
+; Offset With Extruder: {machine_use_extruder_offset_to_offset_coords}
+; Extruder Prime Z Position: {extruder_prime_pos_z}
+; Absolute Extruder Prime Position: {extruder_prime_pos_abs}
+; Maximum Speed X: {machine_max_feedrate_x}
+; Maximum Speed Y: {machine_max_feedrate_y}
+; Maximum Speed Z: {machine_max_feedrate_z}
+; Maximum Feedrate: {machine_max_feedrate_e}
+; Maximum Acceleration X: {machine_max_acceleration_x}
+; Maximum Acceleration Y: {machine_max_acceleration_y}
+; Maximum Acceleration Z: {machine_max_acceleration_z}
+; Maximum Filament Acceleration: {machine_max_acceleration_e}
+; Default Acceleration: {machine_acceleration}
+; Default X-Y Jerk: {machine_max_jerk_xy}
+; Default Z Jerk: {machine_max_jerk_z}
+; Default Filament Jerk: {machine_max_jerk_e}
+; Steps per Millimeter (X): {machine_steps_per_mm_x}
+; Steps per Millimeter (Y): {machine_steps_per_mm_y}
+; Steps per Millimeter (Z): {machine_steps_per_mm_z}
+; Steps per Millimeter (E): {machine_steps_per_mm_e}
+; X Endstop in Positive Direction: {machine_endstop_positive_direction_x}
+; Y Endstop in Positive Direction: {machine_endstop_positive_direction_y}
+; Z Endstop in Positive Direction: {machine_endstop_positive_direction_z}
+; Minimum Feedrate: {machine_minimum_feedrate}
+; Feeder Wheel Diameter: {machine_feeder_wheel_diameter}
+
+;Quality 
+; Layer Height: {layer_height}
+; Initial Layer Height: {layer_height_0}
+; Line Width: {line_width}
+;  Wall Line Width: {wall_line_width}
+;   Outer Wall Line Width: {wall_line_width_0}
+;   Inner Wall(s) Line Width: {wall_line_width_x}
+;  Top/Bottom Line Width: {skin_line_width}
+;  Infill Line Width: {infill_line_width}
+;  Skirt/Brim Line Width: {skirt_brim_line_width}
+;  Support Line Width: {support_line_width}
+;  Support Interface Line Width: {support_interface_line_width}
+;   Support Roof Line Width: {support_roof_line_width}
+;   Support Floor Line Width: {support_bottom_line_width}
+;  Prime Tower Line Width: {prime_tower_line_width}
+;  Initial Layer Line Width: {initial_layer_line_width_factor}
+
+;Shell  
+; Wall Extruder: {wall_extruder_nr}
+;  Outer Wall Extruder: {wall_0_extruder_nr}
+;  Inner Wall Extruder: {wall_x_extruder_nr}
+; Wall Thickness: {wall_thickness}
+;  Wall Line Count: {wall_line_count}
+; Outer Wall Wipe Distance: {wall_0_wipe_dist}
+; Top Surface Skin Extruder: {roofing_extruder_nr}
+; Top Surface Skin Layers: {roofing_layer_count}
+; Top/Bottom Extruder: {top_bottom_extruder_nr}
+; Top/Bottom Thickness: {top_bottom_thickness}
+;  Top Thickness: {top_thickness}
+;   Top Layers: {top_layers}
+;  Bottom Thickness: {bottom_thickness}
+;   Bottom Layers: {bottom_layers}
+; Top/Bottom Pattern: {top_bottom_pattern}
+; Bottom Pattern Initial Layer: {top_bottom_pattern_0}
+; Top/Bottom Line Directions: {skin_angles}
+; Outer Wall Inset: {wall_0_inset}
+; Optimize Wall Printing Order: {optimize_wall_printing_order}
+; Outer Before Inner Walls: {outer_inset_first}
+; Alternate Extra Wall: {alternate_extra_perimeter}
+; Compensate Wall Overlaps: {travel_compensate_overlapping_walls_enabled}
+;  Compensate Outer Wall Overlaps: {travel_compensate_overlapping_walls_0_enabled}
+;  Compensate Inner Wall Overlaps: {travel_compensate_overlapping_walls_x_enabled}
+; Fill Gaps Between Walls: {fill_perimeter_gaps}
+; Filter Out Tiny Gaps: {filter_out_tiny_gaps}
+; Print Thin Walls: {fill_outline_gaps}
+; Horizontal Expansion: {xy_offset}
+; Initial Layer Horizontal Expansion: {xy_offset_layer_0}
+; Z Seam Alignment: {z_seam_type}
+; Z Seam X: {z_seam_x}
+; Z Seam Y: {z_seam_y}
+; Seam Corner Preference: {z_seam_corner}
+; Z Seam Relative: {z_seam_relative}
+; Ignore Small Z Gaps: {skin_no_small_gaps_heuristic}
+; Extra Skin Wall Count: {skin_outline_count}
+; Enable Ironing: {ironing_enabled}
+; Iron Only Highest Layer: {ironing_only_highest_layer}
+; Ironing Pattern: {ironing_pattern}
+; Ironing Line Spacing: {ironing_line_spacing}
+; Ironing Flow: {ironing_flow}
+; Ironing Inset: {ironing_inset}
+; Ironing Speed: {speed_ironing}
+; Ironing Acceleration: {acceleration_ironing}
+; Ironing Jerk: {jerk_ironing}
+
+;Infill 
+; Infill Extruder: {infill_extruder_nr}
+; Infill Density: {infill_sparse_density}
+;  Infill Line Distance: {infill_line_distance}
+; Infill Pattern: {infill_pattern}
+; Connect Infill Lines: {zig_zaggify_infill}
+; Infill Line Directions: {infill_angles}
+; Infill X Offset: {infill_offset_x}
+; Infill Y Offset: {infill_offset_y}
+; Cubic Subdivision Shell: {sub_div_rad_add}
+; Infill Overlap Percentage: {infill_overlap}
+;  Infill Overlap: {infill_overlap_mm}
+; Skin Overlap Percentage: {skin_overlap}
+;  Skin Overlap: {skin_overlap_mm}
+; Infill Wipe Distance: {infill_wipe_dist}
+; Infill Layer Thickness: {infill_sparse_thickness}
+; Gradual Infill Steps: {gradual_infill_steps}
+; Gradual Infill Step Height: {gradual_infill_step_height}
+; Infill Before Walls: {infill_before_walls}
+; Minimum Infill Area: {min_infill_area}
+; Skin Removal Width: {skin_preshrink}
+;  Top Skin Removal Width: {top_skin_preshrink}
+;  Bottom Skin Removal Width: {bottom_skin_preshrink}
+; Skin Expand Distance: {expand_skins_expand_distance}
+;  Top Skin Expand Distance: {top_skin_expand_distance}
+;  Bottom Skin Expand Distance: {bottom_skin_expand_distance}
+; Maximum Skin Angle for Expansion: {max_skin_angle_for_expansion}
+;  Minimum Skin Width for Expansion: {min_skin_width_for_expansion}
+
+;Material  
+; Default Printing Temperature: {default_material_print_temperature}
+; Printing Temperature: {material_print_temperature}
+; Printing Temperature Initial Layer: {material_print_temperature_layer_0}
+; Initial Printing Temperature: {material_initial_print_temperature}
+; Final Printing Temperature: {material_final_print_temperature}
+; Extrusion Cool Down Speed Modifier: {material_extrusion_cool_down_speed}
+; Default Build Plate Temperature: {default_material_bed_temperature}
+; Build Plate Temperature: {material_bed_temperature}
+; Build Plate Temperature Initial Layer: {material_bed_temperature_layer_0}
+; Diameter: {material_diameter}
+; Adhesion Tendency: {material_adhesion_tendency}
+; Surface Energy: {material_surface_energy}
+; Shrinkage Ratio: {material_shrinkage_percentage}
+; Flow: {material_flow}
+; Initial Layer Flow: {material_flow_layer_0}
+; Enable Retraction: {retraction_enable}
+; Retract at Layer Change: {retract_at_layer_change}
+; Retraction Distance: {retraction_amount}
+; Retraction Speed: {retraction_speed}
+;  Retraction Retract Speed: {retraction_retract_speed}
+;  Retraction Prime Speed: {retraction_prime_speed}
+; Retraction Extra Prime Amount: {retraction_extra_prime_amount}
+; Retraction Minimum Travel: {retraction_min_travel}
+; Maximum Retraction Count: {retraction_count_max}
+; Minimum Extrusion Distance Window: {retraction_extrusion_window}
+; Standby Temperature: {material_standby_temperature}
+; Nozzle Switch Retraction Distance: {switch_extruder_retraction_amount}
+; Nozzle Switch Retraction Speed: {switch_extruder_retraction_speeds}
+;  Nozzle Switch Retract Speed: {switch_extruder_retraction_speed}
+;  Nozzle Switch Prime Speed: {switch_extruder_prime_speed}
+
+;Speed  
+; Print Speed: {speed_print}
+;  Infill Speed: {speed_infill}
+;  Wall Speed: {speed_wall}
+;   Outer Wall Speed: {speed_wall_0}
+;   Inner Wall Speed: {speed_wall_x}
+;  Top Surface Skin Speed: {speed_roofing}
+;  Top/Bottom Speed: {speed_topbottom}
+;  Support Speed: {speed_support}
+;   Support Infill Speed: {speed_support_infill}
+;   Support Interface Speed: {speed_support_interface}
+;    Support Roof Speed: {speed_support_roof}
+;    Support Floor Speed: {speed_support_bottom}
+;  Prime Tower Speed: {speed_prime_tower}
+; Travel Speed: {speed_travel}
+; Initial Layer Speed: {speed_layer_0}
+;  Initial Layer Print Speed: {speed_print_layer_0}
+;  Initial Layer Travel Speed: {speed_travel_layer_0}
+; Skirt/Brim Speed: {skirt_brim_speed}
+; Maximum Z Speed: {max_feedrate_z_override}
+; Number of Slower Layers: {speed_slowdown_layers}
+; Equalize Filament Flow: {speed_equalize_flow_enabled}
+; Maximum Speed for Flow Equalization: {speed_equalize_flow_max}
+; Enable Acceleration Control: {acceleration_enabled}
+; Print Acceleration: {acceleration_print}
+;  Infill Acceleration: {acceleration_infill}
+;  Wall Acceleration: {acceleration_wall}
+;   Outer Wall Acceleration: {acceleration_wall_0}
+;   Inner Wall Acceleration: {acceleration_wall_x}
+;  Top Surface Skin Acceleration: {acceleration_roofing}
+;  Top/Bottom Acceleration: {acceleration_topbottom}
+;  Support Acceleration: {acceleration_support}
+;   Support Infill Acceleration: {acceleration_support_infill}
+;   Support Interface Acceleration: {acceleration_support_interface}
+;    Support Roof Acceleration: {acceleration_support_roof}
+;    Support Floor Acceleration: {acceleration_support_bottom}
+;  Prime Tower Acceleration: {acceleration_prime_tower}
+; Travel Acceleration: {acceleration_travel}
+; Initial Layer Acceleration: {acceleration_layer_0}
+;  Initial Layer Print Acceleration: {acceleration_print_layer_0}
+;  Initial Layer Travel Acceleration: {acceleration_travel_layer_0}
+; Skirt/Brim Acceleration: {acceleration_skirt_brim}
+; Enable Jerk Control: {jerk_enabled}
+; Print Jerk: {jerk_print}
+;  Infill Jerk: {jerk_infill}
+;  Wall Jerk: {jerk_wall}
+;   Outer Wall Jerk: {jerk_wall_0}
+;   Inner Wall Jerk: {jerk_wall_x}
+;  Top Surface Skin Jerk: {jerk_roofing}
+;  Top/Bottom Jerk: {jerk_topbottom}
+;  Support Jerk: {jerk_support}
+;   Support Infill Jerk: {jerk_support_infill}
+;   Support Interface Jerk: {jerk_support_interface}
+;    Support Roof Jerk: {jerk_support_roof}
+;    Support Floor Jerk: {jerk_support_bottom}
+;  Prime Tower Jerk: {jerk_prime_tower}
+; Travel Jerk: {jerk_travel}
+; Initial Layer Jerk: {jerk_layer_0}
+;  Initial Layer Print Jerk: {jerk_print_layer_0}
+;  Initial Layer Travel Jerk: {jerk_travel_layer_0}
+; Skirt/Brim Jerk: {jerk_skirt_brim}
+
+;Travel 
+; Combing Mode: {retraction_combing}
+; Retract Before Outer Wall: {travel_retract_before_outer_wall}
+; Avoid Printed Parts When Traveling: {travel_avoid_other_parts}
+; Travel Avoid Distance: {travel_avoid_distance}
+; Start Layers with the Same Part: {start_layers_at_same_position}
+; Layer Start X: {layer_start_x}
+; Layer Start Y: {layer_start_y}
+; Z Hop When Retracted: {retraction_hop_enabled}
+; Z Hop Only Over Printed Parts: {retraction_hop_only_when_collides}
+; Z Hop Height: {retraction_hop}
+; Z Hop After Extruder Switch: {retraction_hop_after_extruder_switch}
+
+;Cooling 
+; Enable Print Cooling: {cool_fan_enabled}
+; Fan Speed: {cool_fan_speed}
+;  Regular Fan Speed: {cool_fan_speed_min}
+;  Maximum Fan Speed: {cool_fan_speed_max}
+; Regular/Maximum Fan Speed Threshold: {cool_min_layer_time_fan_speed_max}
+; Initial Fan Speed: {cool_fan_speed_0}
+; Regular Fan Speed at Height: {cool_fan_full_at_height}
+;  Regular Fan Speed at Layer: {cool_fan_full_layer}
+; Minimum Layer Time: {cool_min_layer_time}
+; Minimum Speed: {cool_min_speed}
+; Lift Head: {cool_lift_head}
+
+;Support 
+; Generate Support: {support_enable}
+; Support Extruder: {support_extruder_nr}
+;  Support Infill Extruder: {support_infill_extruder_nr}
+;  First Layer Support Extruder: {support_extruder_nr_layer_0}
+;  Support Interface Extruder: {support_interface_extruder_nr}
+;   Support Roof Extruder: {support_roof_extruder_nr}
+;   Support Floor Extruder: {support_bottom_extruder_nr}
+; Support Placement: {support_type}
+; Support Overhang Angle: {support_angle}
+; Support Pattern: {support_pattern}
+; Connect Support Lines: {zig_zaggify_support}
+; Connect Support ZigZags: {support_connect_zigzags}
+; Support Density: {support_infill_rate}
+;  Support Line Distance: {support_line_distance}
+; Support Z Distance: {support_z_distance}
+;  Support Top Distance: {support_top_distance}
+;  Support Bottom Distance: {support_bottom_distance}
+; Support X/Y Distance: {support_xy_distance}
+; Support Distance Priority: {support_xy_overrides_z}
+; Minimum Support X/Y Distance: {support_xy_distance_overhang}
+; Support Stair Step Height: {support_bottom_stair_step_height}
+; Support Stair Step Maximum Width: {support_bottom_stair_step_width}
+; Support Join Distance: {support_join_distance}
+; Support Horizontal Expansion: {support_offset}
+; Support Infill Layer Thickness: {support_infill_sparse_thickness}
+; Gradual Support Infill Steps: {gradual_support_infill_steps}
+; Gradual Support Infill Step Height: {gradual_support_infill_step_height}
+; Enable Support Interface: {support_interface_enable}
+;  Enable Support Roof: {support_roof_enable}
+;  Enable Support Floor: {support_bottom_enable}
+; Support Interface Thickness: {support_interface_height}
+;  Support Roof Thickness: {support_roof_height}
+;  Support Floor Thickness: {support_bottom_height}
+; Support Interface Resolution: {support_interface_skip_height}
+; Support Interface Density: {support_interface_density}
+;  Support Roof Density: {support_roof_density}
+;   Support Roof Line Distance: {support_roof_line_distance}
+;  Support Floor Density: {support_bottom_density}
+;   Support Floor Line Distance: {support_bottom_line_distance}
+; Support Interface Pattern: {support_interface_pattern}
+;  Support Roof Pattern: {support_roof_pattern}
+;  Support Floor Pattern: {support_bottom_pattern}
+; Use Towers: {support_use_towers}
+; Tower Diameter: {support_tower_diameter}
+; Minimum Diameter: {support_minimal_diameter}
+; Tower Roof Angle: {support_tower_roof_angle}
+; Drop Down Support Mesh: {support_mesh_drop_down}
+
+;Build Plate Adhesion 
+; Enable Prime Blob: {prime_blob_enable}
+; Extruder Prime X Position: {extruder_prime_pos_x}
+; Extruder Prime Y Position: {extruder_prime_pos_y}
+; Build Plate Adhesion Type: {adhesion_type}
+; Build Plate Adhesion Extruder: {adhesion_extruder_nr}
+; Skirt Line Count: {skirt_line_count}
+; Skirt Distance: {skirt_gap}
+; Skirt/Brim Minimum Length: {skirt_brim_minimal_length}
+; Brim Width: {brim_width}
+;  Brim Line Count: {brim_line_count}
+; Brim Only on Outside: {brim_outside_only}
+; Raft Extra Margin: {raft_margin}
+; Raft Smoothing: {raft_smoothing}
+; Raft Air Gap: {raft_airgap}
+; Initial Layer Z Overlap: {layer_0_z_overlap}
+; Raft Top Layers: {raft_surface_layers}
+; Raft Top Layer Thickness: {raft_surface_thickness}
+; Raft Top Line Width: {raft_surface_line_width}
+; Raft Top Spacing: {raft_surface_line_spacing}
+; Raft Middle Thickness: {raft_interface_thickness}
+; Raft Middle Line Width: {raft_interface_line_width}
+; Raft Middle Spacing: {raft_interface_line_spacing}
+; Raft Base Thickness: {raft_base_thickness}
+; Raft Base Line Width: {raft_base_line_width}
+; Raft Line Spacing: {raft_base_line_spacing}
+; Raft Print Speed: {raft_speed}
+;  Raft Top Print Speed: {raft_surface_speed}
+;  Raft Middle Print Speed: {raft_interface_speed}
+;  Raft Base Print Speed: {raft_base_speed}
+; Raft Print Acceleration: {raft_acceleration}
+;  Raft Top Print Acceleration: {raft_surface_acceleration}
+;  Raft Middle Print Acceleration: {raft_interface_acceleration}
+;  Raft Base Print Acceleration: {raft_base_acceleration}
+; Raft Print Jerk: {raft_jerk}
+;  Raft Top Print Jerk: {raft_surface_jerk}
+;  Raft Middle Print Jerk: {raft_interface_jerk}
+;  Raft Base Print Jerk: {raft_base_jerk}
+; Raft Fan Speed: {raft_fan_speed}
+;  Raft Top Fan Speed: {raft_surface_fan_speed}
+;  Raft Middle Fan Speed: {raft_interface_fan_speed}
+;  Raft Base Fan Speed: {raft_base_fan_speed}
+
+;Dual Extrusion  
+; Enable Prime Tower: {prime_tower_enable}
+; Circular Prime Tower: {prime_tower_circular}
+; Prime Tower Size: {prime_tower_size}
+; Prime Tower Minimum Volume: {prime_tower_min_volume}
+;  Prime Tower Thickness: {prime_tower_wall_thickness}
+; Prime Tower X Position: {prime_tower_position_x}
+; Prime Tower Y Position: {prime_tower_position_y}
+; Prime Tower Flow: {prime_tower_flow}
+; Wipe Inactive Nozzle on Prime Tower: {prime_tower_wipe_enabled}
+; Wipe Nozzle After Switch: {dual_pre_wipe}
+; Prime Tower Purge Volume: {prime_tower_purge_volume}
+; Enable Ooze Shield: {ooze_shield_enabled}
+; Ooze Shield Angle: {ooze_shield_angle}
+; Ooze Shield Distance: {ooze_shield_dist}
+
+;Mesh Fixes 
+; Union Overlapping Volumes: {meshfix_union_all}
+; Remove All Holes: {meshfix_union_all_remove_holes}
+; Extensive Stitching: {meshfix_extensive_stitching}
+; Keep Disconnected Faces: {meshfix_keep_open_polygons}
+; Merged Meshes Overlap: {multiple_mesh_overlap}
+; Remove Mesh Intersection: {carve_multiple_volumes}
+; Alternate Mesh Removal: {alternate_carve_order}
+; Remove Empty First Layers: {remove_empty_first_layers}
+
+;Special Modes 
+; Print Sequence: {print_sequence}
+; Infill Mesh: {infill_mesh}
+; Infill Mesh Order: {infill_mesh_order}
+; Cutting Mesh: {cutting_mesh}
+; Mold: {mold_enabled}
+; Minimal Mold Width: {mold_width}
+; Mold Roof Height: {mold_roof_height}
+; Mold Angle: {mold_angle}
+; Support Mesh: {support_mesh}
+; Anti Overhang Mesh: {anti_overhang_mesh}
+; Surface Mode: {magic_mesh_surface_mode}
+; Spiralize Outer Contour: {magic_spiralize}
+; Smooth Spiralized Contours: {smooth_spiralized_contours}
+; Relative Extrusion: {relative_extrusion}
+
+;Experimental 
+; Tree Support: {support_tree_enable}
+; Tree Support Branch Angle: {support_tree_angle}
+; Tree Support Branch Distance: {support_tree_branch_distance}
+; Tree Support Branch Diameter: {support_tree_branch_diameter}
+; Tree Support Branch Diameter Angle: {support_tree_branch_diameter_angle}
+; Tree Support Collision Resolution: {support_tree_collision_resolution}
+; Tree Support Wall Thickness: {support_tree_wall_thickness}
+;  Tree Support Wall Line Count: {support_tree_wall_count}
+; Slicing Tolerance: {slicing_tolerance}
+; Top Surface Skin Line Width: {roofing_line_width}
+; Top Surface Skin Pattern: {roofing_pattern}
+; Top Surface Skin Line Directions: {roofing_angles}
+; Infill Travel Optimization: {infill_enable_travel_optimization}
+; Auto Temperature: {material_flow_dependent_temperature}
+; Flow Temperature Graph: {material_flow_temp_graph}
+; Maximum Resolution: {meshfix_maximum_resolution}
+; Break Up Support In Chunks: {support_skip_some_zags}
+; Support Chunk Size: {support_skip_zag_per_mm}
+;  Support Chunk Line Count: {support_zag_skip_count}
+; Enable Draft Shield: {draft_shield_enabled}
+; Draft Shield X/Y Distance: {draft_shield_dist}
+; Draft Shield Limitation: {draft_shield_height_limitation}
+; Draft Shield Height: {draft_shield_height}
+; Make Overhang Printable: {conical_overhang_enabled}
+; Maximum Model Angle: {conical_overhang_angle}
+; Enable Coasting: {coasting_enable}
+; Coasting Volume: {coasting_volume}
+; Minimum Volume Before Coasting: {coasting_min_volume}
+; Coasting Speed: {coasting_speed}
+; Alternate Skin Rotation: {skin_alternate_rotation}
+; Cross 3D Pocket Size: {cross_infill_pocket_size}
+; Alternate Cross 3D Pockets: {cross_infill_apply_pockets_alternatingly}
+; Spaghetti Infill: {spaghetti_infill_enabled}
+; Spaghetti Infill Stepping: {spaghetti_infill_stepped}
+; Spaghetti Maximum Infill Angle: {spaghetti_max_infill_angle}
+; Spaghetti Infill Maximum Height: {spaghetti_max_height}
+; Spaghetti Inset: {spaghetti_inset}
+; Spaghetti Flow: {spaghetti_flow}
+; Spaghetti Infill Extra Volume: {spaghetti_infill_extra_volume}
+; Enable Conical Support: {support_conical_enabled}
+; Conical Support Angle: {support_conical_angle}
+; Conical Support Minimum Width: {support_conical_min_width}
+; Hollow Out Objects: {infill_hollow}
+; Fuzzy Skin: {magic_fuzzy_skin_enabled}
+; Fuzzy Skin Thickness: {magic_fuzzy_skin_thickness}
+; Fuzzy Skin Density: {magic_fuzzy_skin_point_density}
+;  Fuzzy Skin Point Distance: {magic_fuzzy_skin_point_dist}
+; Flow rate compensation max extrusion offset: {flow_rate_max_extrusion_offset}
+; Flow rate compensation factor: {flow_rate_extrusion_offset_factor}
+; Wire Printing: {wireframe_enabled}
+; WP Connection Height: {wireframe_height}
+; WP Roof Inset Distance: {wireframe_roof_inset}
+; WP Speed: {wireframe_printspeed}
+;  WP Bottom Printing Speed: {wireframe_printspeed_bottom}
+;  WP Upward Printing Speed: {wireframe_printspeed_up}
+;  WP Downward Printing Speed: {wireframe_printspeed_down}
+;  WP Horizontal Printing Speed: {wireframe_printspeed_flat}
+; WP Flow: {wireframe_flow}
+;  WP Connection Flow: {wireframe_flow_connection}
+;  WP Flat Flow: {wireframe_flow_flat}
+; WP Top Delay: {wireframe_top_delay}
+; WP Bottom Delay: {wireframe_bottom_delay}
+; WP Flat Delay: {wireframe_flat_delay}
+; WP Ease Upward: {wireframe_up_half_speed}
+; WP Knot Size: {wireframe_top_jump}
+; WP Fall Down: {wireframe_fall_down}
+; WP Drag Along: {wireframe_drag_along}
+; WP Strategy: {wireframe_strategy}
+; WP Straighten Downward Lines: {wireframe_straight_before_down}
+; WP Roof Fall Down: {wireframe_roof_fall_down}
+; WP Roof Drag Along: {wireframe_roof_drag_along}
+; WP Roof Outer Delay: {wireframe_roof_outer_delay}
+; WP Nozzle Clearance: {wireframe_nozzle_clearance}
+; Use adaptive layers: {adaptive_layer_height_enabled}
+; Adaptive layers maximum variation: {adaptive_layer_height_variation}
+; Adaptive layers variation step size: {adaptive_layer_height_variation_step}
+; Adaptive layers threshold: {adaptive_layer_height_threshold}
+; Enable Bridge Settings: {bridge_settings_enabled}
+; Minimum Bridge Wall Length: {bridge_wall_min_length}
+; Bridge Skin Support Threshold: {bridge_skin_support_threshold}
+; Bridge Wall Max Overhang: {bridge_wall_max_overhang}
+; Bridge Wall Coasting: {bridge_wall_coast}
+; Bridge Wall Speed: {bridge_wall_speed}
+; Bridge Wall Flow: {bridge_wall_material_flow}
+; Bridge Skin Speed: {bridge_skin_speed}
+; Bridge Skin Flow: {bridge_skin_material_flow}
+; Bridge Skin Density: {bridge_skin_density}
+; Bridge Fan Speed: {bridge_fan_speed}
+; Bridge Has Multiple Layers: {bridge_enable_more_layers}
+; Bridge Second Skin Speed: {bridge_skin_speed_2}
+; Bridge Second Skin Flow: {bridge_skin_material_flow_2}
+; Bridge Second Skin Density: {bridge_skin_density_2}
+; Bridge Second Skin Fan Speed: {bridge_fan_speed_2}
+; Bridge Third Skin Speed: {bridge_skin_speed_3}
+; Bridge Third Skin Flow: {bridge_skin_material_flow_3}
+; Bridge Third Skin Density: {bridge_skin_density_3}
+; Bridge Third Skin Fan Speed: {bridge_fan_speed_3}
+; Try Multiple Line Thicknesses: {wall_try_line_thickness}
+
+;Command Line Settings: {command_line_settings}
+; Center object: {center_object}
+; Mesh position x: {mesh_position_x}
+; Mesh position y: {mesh_position_y}
+; Mesh position z: {mesh_position_z}
+; Mesh Rotation Matrix: {mesh_rotation_matrix}
+
+;******End of current settings*****

@@ -1,0 +1,27 @@
+High #2
+------
+Height .15
+Speed 40
+Accel 500
+Jerk 8
+Travel Jerk 20
+
+Normal #2 Setup1
+-------
+Height .20
+Speed 40
+Accel 500
+Jerk 8
+Travel Jerk 20
+
+
+
+Normal #2 Setup2
+-------
+Height .20
+Speed 40
+Accel 500
+Jerk 8
+Travel Jerk 20
+Temp 210
+
